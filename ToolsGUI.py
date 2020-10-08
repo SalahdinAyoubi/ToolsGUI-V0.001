@@ -210,7 +210,7 @@ class MainApp(QMainWindow , MAIN):
 
     # Function open My_Github
     def My_Github(self):
-        webbrowser.open_new("https://github.com/SalahdinAyoubi")
+        webbrowser.open_new("https://github.com/SalahdinAyoubi/ToolsGUI-V0.001")
 
 
         
