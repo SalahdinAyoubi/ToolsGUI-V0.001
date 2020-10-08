@@ -78,7 +78,7 @@ class MainApp(QMainWindow , MAIN):
         path = f'cd "{path}" &&'
         command = db_commands[id]
         os.system("gnome-terminal -e 'bash -c \""+path+command+";bash\"'")
-        print(path)
+       
         
 
     # funcion get data from file db/toolsGUI.db
