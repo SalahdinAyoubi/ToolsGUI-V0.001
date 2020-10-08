@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+
+
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
@@ -72,9 +75,9 @@ class MainApp(QMainWindow , MAIN):
 
     def handel_commands(self , id):
         path = db_paths[id]
-        path = f' "{path}"'
+        path = f'cd "{path}" &&'
         command = db_commands[id]
-        os.system("gnome-terminal -e 'bash -c \""+command+path+";bash\"'")
+        os.system("gnome-terminal -e 'bash -c \""+path+command+";bash\"'")
         print(path)
         
 
@@ -266,8 +269,8 @@ def get_image_file(self):
 
 
 def save_path_tool(self):
-    save = QFileDialog.getOpenFileName()    #getExistingDirectory(None, "select Download Diroctory")
-    lpath.setText(save[0])
+    save = QFileDialog.getExistingDirectory(None, "select Download Diroctory")
+    lpath.setText(save)
 
 
 def save_data_tool(self):
