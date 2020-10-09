@@ -78,7 +78,6 @@ class MainApp(QMainWindow , MAIN):
         path = f'cd "{path}" &&'
         command = db_commands[id]
         os.system("gnome-terminal -e 'bash -c \""+path+command+";bash\"'")
-       
         
 
     # funcion get data from file db/toolsGUI.db
@@ -102,7 +101,6 @@ class MainApp(QMainWindow , MAIN):
             db_commands.append(raw[4])
         db.commit()
         db.close()
-        print("data base close ")
 
 
 
@@ -210,7 +208,7 @@ class MainApp(QMainWindow , MAIN):
 
     # Function open My_Github
     def My_Github(self):
-        webbrowser.open_new("https://github.com/SalahdinAyoubi/ToolsGUI-V0.001")
+        webbrowser.open_new("https://github.com/SalahdinAyoubi")
 
 
         
@@ -258,7 +256,7 @@ class MainApp(QMainWindow , MAIN):
         icon.clicked.connect(get_image_file)
         get_file.clicked.connect(save_path_tool)
         save.clicked.connect(save_data_tool)
-
+        save.clicked.connect(self.handel_refresh_widget)
 
 # get image for tool with window add tools
 def get_image_file(self):
